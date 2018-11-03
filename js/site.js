@@ -1,0 +1,1 @@
+require(["uiLoader"], function(ui) { ui.init() } );

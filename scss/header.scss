@@ -45,16 +45,31 @@
 		}
 
 		.languages {
+			$languages-height: 17Px;
+
 			position: relative;
-			height: 17Px;
+			height: $languages-height;
 			width: 74Px;
 			margin-left: $header-standard-padding;
+			overflow: hidden;
 
-			img {
+			$flag-size: 14Px;
+			$flag-gap: $languages-height - $flag-size;
+			.flags {
+				width: $flag-size;
+				padding-top: $flag-gap;
 				position: absolute;
-				top: 2Px;
-				border-radius: 3Px;
+				transition: margin-top .3s ease-in;
+
+				img {
+					border-radius: 3Px;
+					margin-bottom: $flag-gap;
+				}
+
+				&.uk { margin-top: 0; }
+				&.ru { margin-top: -1 * ($flag-size + $flag-gap); }
 			}
+
 
 			.rectangle {
 				display: block;

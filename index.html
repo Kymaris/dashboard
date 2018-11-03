@@ -6,7 +6,8 @@
 	<title>Street wear shop 3</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-	<!-- <script src="main.js"></script> -->
+	<script data-main="js/site.js" src="js/require.js"></script>
+	<script src="js/require.config.js"></script>
 </head>
 <body>
 	<div id="common-wrapper">
@@ -24,11 +25,14 @@
 					</ul>
 				</nav>
 				<label class="languages">
-					<img src="image/flag-uk.svg"/> 
+					<span class="flags">
+						<img src="image/flag-uk.svg"/> 
+						<img src="image/flag-ru.svg"/> 
+					</span>
 					<span class="rectangle" role="figure"></span>
-					<select for="">
-						<option>Eng</option>
-						<option>Rus</option>
+					<select>
+						<option value="uk">Eng</option>
+						<option value="ru">Rus</option>
 					</select>
 				</label>
 				<div class="user-status">

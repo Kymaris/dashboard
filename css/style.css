@@ -116,11 +116,20 @@ body {
     position: relative;
     height: 17Px;
     width: 74Px;
-    margin-left: 25Px; }
-    .site-header .top-nav .languages img {
+    margin-left: 25Px;
+    overflow: hidden; }
+    .site-header .top-nav .languages .flags {
+      width: 14Px;
+      padding-top: 3Px;
       position: absolute;
-      top: 2Px;
-      border-radius: 3Px; }
+      transition: margin-top .3s ease-in; }
+      .site-header .top-nav .languages .flags img {
+        border-radius: 3Px;
+        margin-bottom: 3Px; }
+      .site-header .top-nav .languages .flags.uk {
+        margin-top: 0; }
+      .site-header .top-nav .languages .flags.ru {
+        margin-top: -17Px; }
     .site-header .top-nav .languages .rectangle {
       display: block;
       border-color: #828393 transparent transparent;
@@ -237,10 +246,6 @@ body {
       background-image: url("../image/cube-primary-5.svg"); }
     .site-nav nav li a.sport {
       background-image: url("../image/ball-primary-5.svg"); }
-    .site-nav nav li li a, .site-nav nav li li a:visited {
-      text-transform: none;
-      padding-left: 68Px;
-      color: #ACADBF; }
     .site-nav nav li.details-list > a {
       position: relative; }
       .site-nav nav li.details-list > a:after {
@@ -255,7 +260,20 @@ body {
         transform: rotate(45deg);
         border-color: #FAFBFF;
         border-style: solid;
-        border-width: 0 2Px 2Px 0; }
+        border-width: 0 2Px 2Px 0;
+        transition: transform .3s ease-in; }
+    .site-nav nav li.details-list ul {
+      max-height: 100%;
+      overflow: hidden;
+      transition: max-height .3s ease-in; }
+      .site-nav nav li.details-list ul li a, .site-nav nav li.details-list ul li a:visited {
+        text-transform: none;
+        padding-left: 68Px;
+        color: #ACADBF; }
+    .site-nav nav li.details-list.collapsed > a:after {
+      transform: rotate(-45Deg); }
+    .site-nav nav li.details-list.collapsed ul {
+      max-height: 0; }
   .site-nav .my-games {
     border-width: 1Px 0;
     border-style: solid;

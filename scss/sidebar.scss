@@ -54,28 +54,48 @@
 				&.sport           { @extend %glyph-link; @include glyph-link('ball') }
 			}
 
-			li a, li a:visited {
-				text-transform: none;
-				padding-left: 2 * $aside-standard-gap + 18Px;
-				color: primary-color(5);
-			}
+			
 
-			&.details-list > a {
-				position: relative;
-	
-				&:after {
-					content: '';
-					display: block;
-					width: 6Px;
-					height: 6Px;
-					position: absolute;
-					right: $aside-standard-gap;
-					top: 50%;
-					margin-top: -5Px;
-					transform: rotate(45deg);
-					border-color: primary-color(10);
-					border-style: solid;
-					border-width: 0 2Px 2Px 0;
+			&.details-list {
+				& > a {
+					position: relative;
+		
+					&:after {
+						content: '';
+						display: block;
+						width: 6Px;
+						height: 6Px;
+						position: absolute;
+						right: $aside-standard-gap;
+						top: 50%;
+						margin-top: -5Px;
+						transform: rotate(45deg);
+						border-color: primary-color(10);
+						border-style: solid;
+						border-width: 0 2Px 2Px 0;
+						transition: transform .3s ease-in;
+					}
+				}
+
+				ul {
+					max-height: 100%;
+					overflow: hidden;
+					transition: max-height .3s ease-in;
+
+					li a, li a:visited {
+						text-transform: none;
+						padding-left: 2 * $aside-standard-gap + 18Px;
+						color: primary-color(5);
+					}
+				}
+
+				&.collapsed {
+					& > a:after {
+						transform: rotate(-45Deg)
+					}
+					ul {
+						max-height: 0;
+					}
 				}
 			}
 		}
