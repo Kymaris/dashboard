@@ -14,33 +14,69 @@
 	nav {
 		margin-bottom: $aside-standard-gap;
 
-		li.current a {
-			background-color: primary-color(3);
-			border-left: 4Px solid secondary-color(3);
+		%glyph-link {
+			background-position: $aside-standard-gap center;
+			background-repeat: no-repeat;
 		}
 
-		li li a,
-		li li a:visited {
-			text-transform: none;
-			padding-left: 2 * $aside-standard-gap;
-			color: primary-color(5);
+		@mixin glyph-link($filename, $current: 0) {
+			$filename: '../image/#{$filename}';
+			@if ($current == 1) {
+				$filename: $filename + '-secondary-3';
+			} @else {
+				$filename: $filename + '-primary-5';
+			}
+			$filename: $filename + '.svg';
+			background-image: url($filename);
 		}
-		li.details-list > a {
-			position: relative;
+		
+		li {
+			&.current a,
+			&.current a:visited {
+				background-color: primary-color(3);
+				box-shadow: 4Px 0 secondary-color(3) inset;
+				color: primary-color(10);
 
-			&:after {
-				content: '';
-				display: block;
-				width: 6Px;
-				height: 6Px;
-				position: absolute;
-				right: $aside-standard-gap;
-				top: 50%;
-				margin-top: -5Px;
-				transform: rotate(45deg);
-				border-color: primary-color(10);
-				border-style: solid;
-				border-width: 0 2Px 2Px 0;
+				&.action          { @include glyph-link('sword', 1) }
+				&.adventure       { @include glyph-link('rocket', 1) }
+				&.casual          { @include glyph-link('puzzle', 1) }
+				&.strategy        { @include glyph-link('chees', 1) }
+				&.intellectual    { @include glyph-link('cube', 1) }
+				&.sport           { @include glyph-link('ball', 1) }
+			}
+
+			a {
+				&.action          { @extend %glyph-link; @include glyph-link('sword') }
+				&.adventure       { @extend %glyph-link; @include glyph-link('rocket') }
+				&.casual          { @extend %glyph-link; @include glyph-link('puzzle') }
+				&.strategy        { @extend %glyph-link; @include glyph-link('chees') }
+				&.intellectual    { @extend %glyph-link; @include glyph-link('cube') }
+				&.sport           { @extend %glyph-link; @include glyph-link('ball') }
+			}
+
+			li a, li a:visited {
+				text-transform: none;
+				padding-left: 2 * $aside-standard-gap + 18Px;
+				color: primary-color(5);
+			}
+
+			&.details-list > a {
+				position: relative;
+	
+				&:after {
+					content: '';
+					display: block;
+					width: 6Px;
+					height: 6Px;
+					position: absolute;
+					right: $aside-standard-gap;
+					top: 50%;
+					margin-top: -5Px;
+					transform: rotate(45deg);
+					border-color: primary-color(10);
+					border-style: solid;
+					border-width: 0 2Px 2Px 0;
+				}
 			}
 		}
 	}
@@ -82,7 +118,7 @@
 						width: $height;
 						height: $height;
 						border-radius: 100%;
-						background: secondary-color(8);
+						background: primary-color(4);
 						box-shadow: 0 0 12Px primary-color(2);
 						transition: all .1s ease-in;
 					}

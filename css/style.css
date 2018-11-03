@@ -206,13 +206,40 @@ body {
     padding: 6.25Px 25Px; }
   .site-nav nav {
     margin-bottom: 25Px; }
-    .site-nav nav li.current a {
+    .site-nav nav li a.action, .site-nav nav li a.adventure, .site-nav nav li a.casual, .site-nav nav li a.strategy, .site-nav nav li a.intellectual, .site-nav nav li a.sport {
+      background-position: 25Px center;
+      background-repeat: no-repeat; }
+    .site-nav nav li.current a, .site-nav nav li.current a:visited {
       background-color: #6D6E7E;
-      border-left: 4Px solid #4A39E2; }
-    .site-nav nav li li a,
-    .site-nav nav li li a:visited {
+      box-shadow: 4Px 0 #4A39E2 inset;
+      color: #FAFBFF; }
+      .site-nav nav li.current a.action, .site-nav nav li.current a:visited.action {
+        background-image: url("../image/sword-secondary-3.svg"); }
+      .site-nav nav li.current a.adventure, .site-nav nav li.current a:visited.adventure {
+        background-image: url("../image/rocket-secondary-3.svg"); }
+      .site-nav nav li.current a.casual, .site-nav nav li.current a:visited.casual {
+        background-image: url("../image/puzzle-secondary-3.svg"); }
+      .site-nav nav li.current a.strategy, .site-nav nav li.current a:visited.strategy {
+        background-image: url("../image/chees-secondary-3.svg"); }
+      .site-nav nav li.current a.intellectual, .site-nav nav li.current a:visited.intellectual {
+        background-image: url("../image/cube-secondary-3.svg"); }
+      .site-nav nav li.current a.sport, .site-nav nav li.current a:visited.sport {
+        background-image: url("../image/ball-secondary-3.svg"); }
+    .site-nav nav li a.action {
+      background-image: url("../image/sword-primary-5.svg"); }
+    .site-nav nav li a.adventure {
+      background-image: url("../image/rocket-primary-5.svg"); }
+    .site-nav nav li a.casual {
+      background-image: url("../image/puzzle-primary-5.svg"); }
+    .site-nav nav li a.strategy {
+      background-image: url("../image/chees-primary-5.svg"); }
+    .site-nav nav li a.intellectual {
+      background-image: url("../image/cube-primary-5.svg"); }
+    .site-nav nav li a.sport {
+      background-image: url("../image/ball-primary-5.svg"); }
+    .site-nav nav li li a, .site-nav nav li li a:visited {
       text-transform: none;
-      padding-left: 50Px;
+      padding-left: 68Px;
       color: #ACADBF; }
     .site-nav nav li.details-list > a {
       position: relative; }
@@ -254,7 +281,7 @@ body {
           width: 25Px;
           height: 25Px;
           border-radius: 100%;
-          background: #ADADFF;
+          background: #828393;
           box-shadow: 0 0 12Px #4D4E5E;
           transition: all .1s ease-in; }
       .site-nav .site-theme label input[type=checkbox]:checked + span:after {
