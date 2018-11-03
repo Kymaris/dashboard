@@ -26,6 +26,41 @@ $secondary-color:
 	@return nth($primary-color, $index);
 }
 
+@mixin primary-background-color($index) {
+	transition: background-color .2s ease-in-out;
+	background-color: primary-color($index);
+
+	&.light-theme,
+	.light-theme & {
+		$primary-color-length: length($primary-color);
+		background-color: primary-color($primary-color-length - $index + 1);
+	}
+}
+
+@mixin primary-text-color($index) {
+	transition: color .2s ease-in-out;
+	color: primary-color($index);
+
+	&.light-theme,
+	.light-theme & {
+		$primary-color-length: length($primary-color);
+		color: primary-color($primary-color-length - $index + 1);
+	}
+}
+
+@mixin primary-background-text-color($backgroundIndex, $textIndex) {
+	transition: color .2s ease-in-out, background-color .2s ease-in-out;
+	background-color: primary-color($backgroundIndex);
+	color: primary-color($textIndex);
+
+	&.light-theme,
+	.light-theme & {
+		$primary-color-length: length($primary-color);
+		color: primary-color($primary-color-length - $textIndex + 1);
+		background-color: primary-color($primary-color-length - $backgroundIndex + 1);
+	}
+}
+
 @function primary-label-color($index) {
 	@if ($index < 5) {
 		@return nth($primary-color, 10);

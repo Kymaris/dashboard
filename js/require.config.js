@@ -41,7 +41,7 @@
 	require.config({
 		paths: paths([
 			'uiLoader',
-			{ 'widget': ['language-select', 'sitenav-details'] }
+			{ 'widget': ['language-select', 'sitenav-details', 'theme-switcher'] }
 		]),
 		shim: {
 			'resource_about_amd_en': { exports: 'res.aboutAmd' }

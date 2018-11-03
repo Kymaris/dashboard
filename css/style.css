@@ -81,9 +81,14 @@ table {
       padding-top: 70Px; }
 
 body {
-  background-color: #2B2C3A;
   font: 14Px/16Px Arial;
   color: #FAFBFF; }
+
+#common-wrapper {
+  transition: background-color .2s ease-in-out;
+  background-color: #2B2C3A; }
+  #common-wrapper.light-theme, .light-theme #common-wrapper {
+    background-color: #FAFBFF; }
 
 .site-header {
   border-bottom: 1px solid #6D6E7E; }
@@ -204,8 +209,12 @@ body {
         background-color: lightgreen; }
 
 .site-nav {
+  transition: background-color .2s ease-in-out;
   background-color: #4D4E5E; }
+  .site-nav.light-theme, .light-theme .site-nav {
+    background-color: #F6F6FF; }
   .site-nav a, .site-nav a:visited {
+    transition: color .2s ease-in-out;
     color: #FAFBFF;
     text-decoration: none;
     display: block;
@@ -213,15 +222,21 @@ body {
     line-height: 2Em;
     text-transform: uppercase;
     padding: 6.25Px 25Px; }
+    .site-nav a.light-theme, .light-theme .site-nav a, .site-nav a:visited.light-theme, .light-theme .site-nav a:visited {
+      color: #2B2C3A; }
   .site-nav nav {
     margin-bottom: 25Px; }
     .site-nav nav li a.action, .site-nav nav li a.adventure, .site-nav nav li a.casual, .site-nav nav li a.strategy, .site-nav nav li a.intellectual, .site-nav nav li a.sport {
       background-position: 25Px center;
       background-repeat: no-repeat; }
     .site-nav nav li.current a, .site-nav nav li.current a:visited {
+      transition: color .2s ease-in-out, background-color .2s ease-in-out;
       background-color: #6D6E7E;
-      box-shadow: 4Px 0 #4A39E2 inset;
-      color: #FAFBFF; }
+      color: #FAFBFF;
+      box-shadow: 4Px 0 #4A39E2 inset; }
+      .site-nav nav li.current a.light-theme, .light-theme .site-nav nav li.current a, .site-nav nav li.current a:visited.light-theme, .light-theme .site-nav nav li.current a:visited {
+        color: #2B2C3A;
+        background-color: #F1F1FF; }
       .site-nav nav li.current a.action, .site-nav nav li.current a:visited.action {
         background-image: url("../image/sword-secondary-3.svg"); }
       .site-nav nav li.current a.adventure, .site-nav nav li.current a:visited.adventure {
@@ -261,19 +276,23 @@ body {
         border-color: #FAFBFF;
         border-style: solid;
         border-width: 0 2Px 2Px 0;
-        transition: transform .3s ease-in; }
+        transition: transform .1s ease-in; }
     .site-nav nav li.details-list ul {
-      max-height: 100%;
+      max-height: 50%;
       overflow: hidden;
-      transition: max-height .3s ease-in; }
+      transition: max-height .3s ease-out; }
       .site-nav nav li.details-list ul li a, .site-nav nav li.details-list ul li a:visited {
+        transition: color .2s ease-in-out;
+        color: #ACADBF;
         text-transform: none;
-        padding-left: 68Px;
-        color: #ACADBF; }
+        padding-left: 68Px; }
+        .site-nav nav li.details-list ul li a.light-theme, .light-theme .site-nav nav li.details-list ul li a, .site-nav nav li.details-list ul li a:visited.light-theme, .light-theme .site-nav nav li.details-list ul li a:visited {
+          color: #CACADC; }
     .site-nav nav li.details-list.collapsed > a:after {
       transform: rotate(-45Deg); }
     .site-nav nav li.details-list.collapsed ul {
-      max-height: 0; }
+      max-height: 0;
+      transition-timing-function: ease-in; }
   .site-nav .my-games {
     border-width: 1Px 0;
     border-style: solid;

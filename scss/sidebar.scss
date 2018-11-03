@@ -1,8 +1,8 @@
 .site-nav {
-	background-color: primary-color(2);
+	@include primary-background-color(2);
 
 	a, a:visited {
-		color: primary-color(10);
+		@include primary-text-color(10);
 		text-decoration: none;
 		display: block;
 		font-size: 1.4Em;
@@ -33,9 +33,8 @@
 		li {
 			&.current a,
 			&.current a:visited {
-				background-color: primary-color(3);
+				@include primary-background-text-color(3, 10);
 				box-shadow: 4Px 0 secondary-color(3) inset;
-				color: primary-color(10);
 
 				&.action          { @include glyph-link('sword', 1) }
 				&.adventure       { @include glyph-link('rocket', 1) }
@@ -54,8 +53,6 @@
 				&.sport           { @extend %glyph-link; @include glyph-link('ball') }
 			}
 
-			
-
 			&.details-list {
 				& > a {
 					position: relative;
@@ -73,28 +70,30 @@
 						border-color: primary-color(10);
 						border-style: solid;
 						border-width: 0 2Px 2Px 0;
-						transition: transform .3s ease-in;
+						transition: transform .1s ease-in;
 					}
 				}
 
 				ul {
-					max-height: 100%;
+					max-height: 50%;
 					overflow: hidden;
-					transition: max-height .3s ease-in;
+					transition: max-height .3s ease-out;
 
 					li a, li a:visited {
+						@include primary-text-color(5);
 						text-transform: none;
 						padding-left: 2 * $aside-standard-gap + 18Px;
-						color: primary-color(5);
 					}
 				}
 
 				&.collapsed {
 					& > a:after {
-						transform: rotate(-45Deg)
+						transform: rotate(-45Deg);
+
 					}
 					ul {
 						max-height: 0;
+						transition-timing-function: ease-in;
 					}
 				}
 			}
