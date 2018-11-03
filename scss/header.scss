@@ -1,0 +1,164 @@
+.site-header {
+	border-bottom: 1px solid primary-color(3);
+
+	.logo {
+		display: flex;
+		align-items: center;
+		padding-left: $header-standard-padding;
+		box-sizing: border-box;
+
+		a {
+			display: inline-block;
+			width: 28Px;
+			height: 28Px;
+			margin-right: 10Px;
+
+			&:hover {
+				box-shadow: 0 0 12Px secondary-color(5);
+				border-radius: 4Px;
+			}
+		}
+
+		h1 {
+			margin-right: 10Px;
+		}
+	}
+
+	.top-nav {
+
+		nav {
+			border-right: 1px solid primary-color(3);
+
+			ul {
+				display: flex;
+				align-items: center;
+
+				li {
+					padding-left: $header-standard-padding;
+				}
+
+				a {
+					color: primary-color(4);
+					text-decoration: none;
+				}
+			}
+		}
+
+		.languages {
+			position: relative;
+			height: 17Px;
+			width: 74Px;
+			margin-left: $header-standard-padding;
+
+			img {
+				position: absolute;
+				top: 2Px;
+				border-radius: 3Px;
+			}
+
+			.rectangle {
+				display: block;
+				border-color: primary-color(4) transparent transparent;
+				border-style: solid;
+				border-width: 4Px 3Px 0;
+				width: 0;
+				top: 50%;
+				right: 6Px;
+				position: absolute;
+				margin-top: 0Px;
+			}
+
+			select {
+				-webkit-appearance: none;
+				background: transparent;
+				color: primary-color(4);
+				border: 0;
+				font-size: 1Em;
+				border-radius: 0;
+				padding: 0 15Px 0 30Px;
+				position: absolute;
+			}
+		}
+
+		.user-status {
+
+			.add-coins, .energy {
+				background: primary-color(3);
+				border: none;
+				padding: 3Px;
+				border-radius: 6Px;
+				line-height: 18Px;
+				margin-right: 0.5 * $header-standard-padding;
+
+				img {
+					width: 18Px;
+					height: 18Px;
+					float:left;
+					margin-right: 6Px;
+				}
+
+				.number {
+					line-height: 18Px;
+					font-weight: bold;
+					color: white;
+
+					span {
+						padding: 0 6Px;
+					}
+				}
+
+				sub {
+					padding: 0 6Px;
+					color: primary-color(6);
+				}
+			}
+
+			.user {
+				display: flex;
+				margin-right: $header-standard-padding;
+
+				img {
+					width: 44Px;
+					height: 44Px;
+					border-radius: 5.5Px;
+					margin-right: 0.5 * $header-standard-padding;
+				}
+
+				.user-name, .network-status {
+					display: block;
+					line-height: 22Px;
+					font-weight: bold;
+				}
+
+				.user-name {
+
+					.membership-status {
+						background: secondary-color(4);
+						border-radius: 4Px;
+						padding: 0 .5em;
+						font-size: .8em;
+					}
+				}
+
+				.network-status {
+					position: relative;
+					color: lightgreen;
+					padding-left: .5em;
+
+					&:before {
+						position: absolute;
+						left: 0;
+						top: 50%;
+						margin-top: -2Px;
+						content: "";
+						display: inline-block;
+						width: 4Px;
+						height: 4Px;
+						border-radius: 100%;
+						background-color: lightgreen;
+					}
+				}
+			}	
+		}
+	}
+}

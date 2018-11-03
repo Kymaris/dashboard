@@ -1,0 +1,57 @@
+$primary-color:
+	#2B2C3A,
+	#4D4E5E,
+	#6D6E7E,
+	#828393,
+	#ACADBF,
+	#CACADC,
+	#EBECFE,
+	#F1F1FF,
+	#F6F6FF,
+	#FAFBFF;
+
+$secondary-color:
+	#3B0BBD,
+	#422BD6,
+	#4A39E2,
+	#5246EF,
+	#5750FB,
+	#6F6EFF,
+	#898BFF,
+	#ADADFF,
+	#CECDFF,
+	#ECEBFF;
+
+@function primary-color($index) {
+	@return nth($primary-color, $index);
+}
+
+@function primary-label-color($index) {
+	@if ($index < 5) {
+		@return nth($primary-color, 10);
+	} 
+	@else {
+		@return nth($primary-color, 1);
+	}
+}
+
+@function secondary-color($index) {
+	@return nth($secondary-color, $index);
+}
+
+@function secondary-label-color($index) {
+	@if ($index < 5) {
+		@return nth($secondary-color, 10);
+	} 
+	@else {
+		@return nth($secondary-color, 1);
+	}
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,264 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+#common-wrapper {
+  min-height: 100%; }
+  #common-wrapper .site-header {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    height: 70Px; }
+    #common-wrapper .site-header .logo {
+      flex: 0 0 280Px; }
+    #common-wrapper .site-header .top-nav {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center; }
+      #common-wrapper .site-header .top-nav nav {
+        padding-right: 25Px; }
+      #common-wrapper .site-header .top-nav .user-status {
+        flex: 1 1 auto;
+        display: flex;
+        align-self: stretch;
+        justify-content: flex-end;
+        align-items: center; }
+  #common-wrapper .site-middle {
+    flex: 1 1 auto;
+    display: flex;
+    min-height: 100%; }
+    #common-wrapper .site-middle .site-nav {
+      flex: 0 0 280Px;
+      display: flex;
+      flex-direction: column;
+      padding: 95Px 0 25Px; }
+      #common-wrapper .site-middle .site-nav .site-theme {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between; }
+    #common-wrapper .site-middle .site-content {
+      flex: 1 1 auto;
+      padding-top: 70Px; }
+
+body {
+  background-color: #2B2C3A;
+  font: 14Px/16Px Arial;
+  color: #FAFBFF; }
+
+.site-header {
+  border-bottom: 1px solid #6D6E7E; }
+  .site-header .logo {
+    display: flex;
+    align-items: center;
+    padding-left: 25Px;
+    box-sizing: border-box; }
+    .site-header .logo a {
+      display: inline-block;
+      width: 28Px;
+      height: 28Px;
+      margin-right: 10Px; }
+      .site-header .logo a:hover {
+        box-shadow: 0 0 12Px #5750FB;
+        border-radius: 4Px; }
+    .site-header .logo h1 {
+      margin-right: 10Px; }
+  .site-header .top-nav nav {
+    border-right: 1px solid #6D6E7E; }
+    .site-header .top-nav nav ul {
+      display: flex;
+      align-items: center; }
+      .site-header .top-nav nav ul li {
+        padding-left: 25Px; }
+      .site-header .top-nav nav ul a {
+        color: #828393;
+        text-decoration: none; }
+  .site-header .top-nav .languages {
+    position: relative;
+    height: 17Px;
+    width: 74Px;
+    margin-left: 25Px; }
+    .site-header .top-nav .languages img {
+      position: absolute;
+      top: 2Px;
+      border-radius: 3Px; }
+    .site-header .top-nav .languages .rectangle {
+      display: block;
+      border-color: #828393 transparent transparent;
+      border-style: solid;
+      border-width: 4Px 3Px 0;
+      width: 0;
+      top: 50%;
+      right: 6Px;
+      position: absolute;
+      margin-top: 0Px; }
+    .site-header .top-nav .languages select {
+      -webkit-appearance: none;
+      background: transparent;
+      color: #828393;
+      border: 0;
+      font-size: 1Em;
+      border-radius: 0;
+      padding: 0 15Px 0 30Px;
+      position: absolute; }
+  .site-header .top-nav .user-status .add-coins, .site-header .top-nav .user-status .energy {
+    background: #6D6E7E;
+    border: none;
+    padding: 3Px;
+    border-radius: 6Px;
+    line-height: 18Px;
+    margin-right: 12.5Px; }
+    .site-header .top-nav .user-status .add-coins img, .site-header .top-nav .user-status .energy img {
+      width: 18Px;
+      height: 18Px;
+      float: left;
+      margin-right: 6Px; }
+    .site-header .top-nav .user-status .add-coins .number, .site-header .top-nav .user-status .energy .number {
+      line-height: 18Px;
+      font-weight: bold;
+      color: white; }
+      .site-header .top-nav .user-status .add-coins .number span, .site-header .top-nav .user-status .energy .number span {
+        padding: 0 6Px; }
+    .site-header .top-nav .user-status .add-coins sub, .site-header .top-nav .user-status .energy sub {
+      padding: 0 6Px;
+      color: #CACADC; }
+  .site-header .top-nav .user-status .user {
+    display: flex;
+    margin-right: 25Px; }
+    .site-header .top-nav .user-status .user img {
+      width: 44Px;
+      height: 44Px;
+      border-radius: 5.5Px;
+      margin-right: 12.5Px; }
+    .site-header .top-nav .user-status .user .user-name, .site-header .top-nav .user-status .user .network-status {
+      display: block;
+      line-height: 22Px;
+      font-weight: bold; }
+    .site-header .top-nav .user-status .user .user-name .membership-status {
+      background: #5246EF;
+      border-radius: 4Px;
+      padding: 0 .5em;
+      font-size: .8em; }
+    .site-header .top-nav .user-status .user .network-status {
+      position: relative;
+      color: lightgreen;
+      padding-left: .5em; }
+      .site-header .top-nav .user-status .user .network-status:before {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -2Px;
+        content: "";
+        display: inline-block;
+        width: 4Px;
+        height: 4Px;
+        border-radius: 100%;
+        background-color: lightgreen; }
+
+.site-nav {
+  background-color: #4D4E5E; }
+  .site-nav a, .site-nav a:visited {
+    color: #FAFBFF;
+    text-decoration: none;
+    display: block;
+    font-size: 1.4Em;
+    line-height: 2Em;
+    text-transform: uppercase;
+    padding: 6.25Px 25Px; }
+  .site-nav nav {
+    margin-bottom: 25Px; }
+    .site-nav nav li.current a {
+      background-color: #6D6E7E;
+      border-left: 4Px solid #4A39E2; }
+    .site-nav nav li li a,
+    .site-nav nav li li a:visited {
+      text-transform: none;
+      padding-left: 50Px;
+      color: #ACADBF; }
+    .site-nav nav li.details-list > a {
+      position: relative; }
+      .site-nav nav li.details-list > a:after {
+        content: '';
+        display: block;
+        width: 6Px;
+        height: 6Px;
+        position: absolute;
+        right: 25Px;
+        top: 50%;
+        margin-top: -5Px;
+        transform: rotate(45deg);
+        border-color: #FAFBFF;
+        border-style: solid;
+        border-width: 0 2Px 2Px 0; }
+  .site-nav .my-games {
+    border-width: 1Px 0;
+    border-style: solid;
+    border-color: #6D6E7E;
+    padding: 25Px; }
+  .site-nav .site-theme {
+    padding: 0 25Px; }
+    .site-nav .site-theme .theme-name {
+      line-height: 33Px;
+      font-size: 1.2Em; }
+    .site-nav .site-theme label input[type=checkbox] {
+      display: none; }
+      .site-nav .site-theme label input[type=checkbox] + span {
+        display: inline-block;
+        width: 50Px;
+        height: 25Px;
+        border-radius: 27Px;
+        border: 2Px solid #828393;
+        padding: 2Px; }
+        .site-nav .site-theme label input[type=checkbox] + span:after {
+          content: "";
+          display: block;
+          width: 25Px;
+          height: 25Px;
+          border-radius: 100%;
+          background: #ADADFF;
+          box-shadow: 0 0 12Px #4D4E5E;
+          transition: all .1s ease-in; }
+      .site-nav .site-theme label input[type=checkbox]:checked + span:after {
+        margin-left: 25Px;
+        background: #5750FB; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,98 @@
+.site-nav {
+	background-color: primary-color(2);
+
+	a, a:visited {
+		color: primary-color(10);
+		text-decoration: none;
+		display: block;
+		font-size: 1.4Em;
+		line-height: 2Em;
+		text-transform: uppercase;
+		padding: .25 * $aside-standard-gap $aside-standard-gap;
+	}
+
+	nav {
+		margin-bottom: $aside-standard-gap;
+
+		li.current a {
+			background-color: primary-color(3);
+			border-left: 4Px solid secondary-color(3);
+		}
+
+		li li a,
+		li li a:visited {
+			text-transform: none;
+			padding-left: 2 * $aside-standard-gap;
+			color: primary-color(5);
+		}
+		li.details-list > a {
+			position: relative;
+
+			&:after {
+				content: '';
+				display: block;
+				width: 6Px;
+				height: 6Px;
+				position: absolute;
+				right: $aside-standard-gap;
+				top: 50%;
+				margin-top: -5Px;
+				transform: rotate(45deg);
+				border-color: primary-color(10);
+				border-style: solid;
+				border-width: 0 2Px 2Px 0;
+			}
+		}
+	}
+
+	.my-games {
+		border-width: 1Px 0;
+		border-style: solid;
+		border-color: primary-color(3);
+		padding: $aside-standard-gap;
+	}
+
+	.site-theme {
+		padding: 0 $aside-standard-gap;
+
+		.theme-name {
+			line-height: 33Px;
+			font-size: 1.2Em;
+		}
+
+		label {
+			$width: 50Px;
+			$height: 25Px;
+			$padding: 2Px;
+
+			input[type=checkbox] {
+				display: none;
+
+				+ span {
+					display: inline-block;
+					width: $width;
+					height: $height;
+					border-radius: $height + $padding;
+					border: 2Px solid primary-color(4);
+					padding: $padding;
+					
+					&:after {
+						content: "";
+						display: block;
+						width: $height;
+						height: $height;
+						border-radius: 100%;
+						background: secondary-color(8);
+						box-shadow: 0 0 12Px primary-color(2);
+						transition: all .1s ease-in;
+					}
+				}
+
+				&:checked + span:after {
+					margin-left: $width - $height;
+					background: secondary-color(5);
+				}
+			}
+		}
+	}
+}

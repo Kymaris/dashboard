@@ -1,0 +1,57 @@
+#common-wrapper {
+	min-height: 100%;
+
+	.site-header {
+		position: absolute;
+		width: 100%;
+		display: flex;
+		height: $header-height;
+
+		.logo {
+			flex: 0 0 $aside-width;
+		}
+
+		.top-nav {
+			flex: 1 1 auto;
+			display: flex;
+			align-items: center;
+
+			nav {
+				padding-right: $header-standard-padding;
+			}
+
+			.user-status {
+				flex: 1 1 auto;
+				display: flex;
+				align-self: stretch;
+				justify-content: flex-end;
+				align-items: center;
+			}
+		}
+	}
+
+	.site-middle {
+		flex: 1 1 auto;
+		display: flex;
+		min-height: 100%;
+		
+		.site-nav {
+			flex: 0 0 $aside-width;
+			display: flex;
+			flex-direction: column;
+			padding: $header-height + $aside-standard-gap 0 $aside-standard-gap;
+			
+			.site-theme {
+				flex: 1 1 auto;
+				display: flex;
+				align-items: flex-end;
+				justify-content: space-between;
+			}
+		}
+
+		.site-content {
+			flex: 1 1 auto;
+			padding-top: $header-height;
+		}
+	}
+}
