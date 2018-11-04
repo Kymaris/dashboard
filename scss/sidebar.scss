@@ -80,7 +80,7 @@
 					transition: max-height .3s ease-out;
 
 					li a, li a:visited {
-						@include primary-text-color(5);
+						@include primary-text-color(8);
 						text-transform: none;
 						padding-left: 2 * $aside-standard-gap + 18Px;
 					}

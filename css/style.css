@@ -283,11 +283,11 @@ body {
       transition: max-height .3s ease-out; }
       .site-nav nav li.details-list ul li a, .site-nav nav li.details-list ul li a:visited {
         transition: color .2s ease-in-out;
-        color: #ACADBF;
+        color: #F1F1FF;
         text-transform: none;
         padding-left: 68Px; }
         .site-nav nav li.details-list ul li a.light-theme, .light-theme .site-nav nav li.details-list ul li a, .site-nav nav li.details-list ul li a:visited.light-theme, .light-theme .site-nav nav li.details-list ul li a:visited {
-          color: #CACADC; }
+          color: #6D6E7E; }
     .site-nav nav li.details-list.collapsed > a:after {
       transform: rotate(-45Deg); }
     .site-nav nav li.details-list.collapsed ul {
