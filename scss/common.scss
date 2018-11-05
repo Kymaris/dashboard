@@ -8,3 +8,11 @@ body {
 	@include primary-background-color(1);
 
 }
+
+// macOS Mojave dark theme
+// https://github.com/WebKit/webkit/commit/46198bd7636f0d1f85e36d830fd3108707d4c169
+@media (prefers-dark-interface) {
+	body {
+		color: red;
+	}
+}
