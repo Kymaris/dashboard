@@ -90,6 +90,9 @@ body {
   #common-wrapper.light-theme, .light-theme #common-wrapper {
     background-color: #FAFBFF; }
 
+@media (prefers-dark-interface) {
+  body {
+    color: red; } }
 .site-header {
   border-bottom: 1px solid #6D6E7E; }
   .site-header .logo {
@@ -303,26 +306,34 @@ body {
     .site-nav .site-theme .theme-name {
       line-height: 33Px;
       font-size: 1.2Em; }
-    .site-nav .site-theme label input[type=checkbox] {
-      display: none; }
-      .site-nav .site-theme label input[type=checkbox] + span {
-        display: inline-block;
-        width: 50Px;
-        height: 25Px;
-        border-radius: 27Px;
-        border: 2Px solid #828393;
-        padding: 2Px; }
-        .site-nav .site-theme label input[type=checkbox] + span:after {
-          content: "";
-          display: block;
-          width: 25Px;
+    .site-nav .site-theme label {
+      position: relative; }
+      .site-nav .site-theme label input[type=checkbox] {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none; }
+        .site-nav .site-theme label input[type=checkbox] + span {
+          display: inline-block;
+          width: 50Px;
           height: 25Px;
-          border-radius: 100%;
-          background: #828393;
-          box-shadow: 0 0 12Px #4D4E5E;
-          transition: all .1s ease-in; }
-      .site-nav .site-theme label input[type=checkbox]:checked + span:after {
-        margin-left: 25Px;
-        background: #5750FB; }
+          border-radius: 27Px;
+          border: 2Px solid #828393;
+          padding: 2Px; }
+          .site-nav .site-theme label input[type=checkbox] + span:after {
+            content: "";
+            display: block;
+            width: 25Px;
+            height: 25Px;
+            border-radius: 100%;
+            background: #828393;
+            box-shadow: 0 0 12Px #4D4E5E;
+            transition: all .1s ease-in; }
+        .site-nav .site-theme label input[type=checkbox]:checked + span:after {
+          margin-left: 25Px;
+          background: #5750FB; }
 
 /*# sourceMappingURL=style.css.map */
