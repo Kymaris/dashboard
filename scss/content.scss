@@ -1,0 +1,153 @@
+.site-content {
+
+    .quests, .games {
+        margin-bottom: $standard-gap;
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: .5 * $standard-gap;
+
+            .name {
+                
+                span {
+                    text-transform: uppercase;
+                    font-size: .7em;
+                    color: primary-color(4);
+                }
+
+                h1 {
+                    font-size: 1.5em;
+                    line-height: 1.5em;
+                    color: primary-color(10);
+                }
+            }
+
+            .pagination {
+                display: flex;
+
+                .all-games {
+                    padding: 10Px 20Px;
+                    margin-right: 10Px;
+                    background: secondary-color(4);
+                    color: primary-color(10);
+                    font-weight: bold;
+                    border: none;
+                    border-radius: 6Px;
+                }
+
+                .prev, .next {
+                    width: 35Px;
+                    margin-right: 5Px;
+                    border: 1Px solid primary-color(4);
+                    background: transparent;
+                    border-radius: 6Px;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                @mixin arrow($deg) {
+                    content: "";
+                    display: block;
+                    width: 6Px;
+                    height: 6Px;
+                    transform: rotate($deg);
+                    border-color: primary-color(4);
+                    border-style: solid;
+                    border-width: 0 2Px 2Px 0;
+                }
+
+                .prev:after {
+                    @include arrow(135deg);
+                    margin-left: 2Px;
+                }
+
+                .next:after {
+                    margin-left: -2Px;
+                    @include arrow(-45deg);
+                }
+            }
+        }
+
+        .items {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10Px;
+
+            .item {
+                background: primary-color(2);
+                border-radius: 6Px;
+
+                header {
+                    position: relative;
+
+                    img {
+                        width: 100%;
+                        border-top-left-radius: 6Px;
+                        border-top-right-radius: 6Px;
+                    }
+
+                    .action {
+                        position: absolute;
+                        top: 15px;
+                        left: 15px;                      
+                        background: secondary-color(4);
+                        color: primary-color(10);
+                        border: none;
+                        border-radius: 6Px;
+                    }
+                }
+
+                .description {
+                    padding: 10Px 15Px 15Px;
+                    border-bottom: 1Px solid primary-color(3);
+                    
+                    h1 {
+                        font-size: 1.2Em;
+                        line-height: 1.2Em;
+                        font-weight: bold;
+                        color: primary-color(10);
+                        margin-bottom: 5Px;
+                    }
+
+                    span {
+                        font-weight: bold;
+                        color: primary-color(5);
+                    }
+                }
+
+                footer {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 15Px;
+
+                    .add-coins, .energy {
+                        display: flex;
+                        align-items: center;
+                    
+                        img {
+                            width: 18Px;
+                            margin-right: 5Px;
+                        }
+
+                        span {
+                            font-weight: bold;
+                            color: primary-color(10);
+                        }
+                    }
+
+                    .accept {
+                        padding: 8Px 12Px;                        
+                        background: secondary-color(4);
+                        color: primary-color(10);
+                        font-weight: bold;
+                        border: none;
+                        border-radius: 6Px;
+                    }
+                }
+            }
+        }
+    }
+}

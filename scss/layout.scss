@@ -17,7 +17,7 @@
 			align-items: center;
 
 			nav {
-				padding-right: $header-standard-padding;
+				padding-right: $standard-gap;
 			}
 
 			.user-status {
@@ -31,7 +31,7 @@
 	}
 
 	.site-middle {
-		flex: 1 1 auto;
+		//flex: 1 1 auto; //Why?
 		display: flex;
 		min-height: 100%;
 		
@@ -39,7 +39,7 @@
 			flex: 0 0 $aside-width;
 			display: flex;
 			flex-direction: column;
-			padding: $header-height + $aside-standard-gap 0 $aside-standard-gap;
+			padding: $header-height + $standard-gap 0 $standard-gap;
 			
 			.site-theme {
 				flex: 1 1 auto;
@@ -51,7 +51,7 @@
 
 		.site-content {
 			flex: 1 1 auto;
-			padding-top: $header-height;
+			padding: $header-height + $standard-gap $standard-gap $standard-gap;
 		}
 	}
 }

@@ -4,7 +4,7 @@
 	.logo {
 		display: flex;
 		align-items: center;
-		padding-left: $header-standard-padding;
+		padding-left: $standard-gap;
 		box-sizing: border-box;
 
 		a {
@@ -34,7 +34,7 @@
 				align-items: center;
 
 				li {
-					padding-left: $header-standard-padding;
+					padding-left: $standard-gap;
 				}
 
 				a {
@@ -50,7 +50,7 @@
 			position: relative;
 			height: $languages-height;
 			width: 74Px;
-			margin-left: $header-standard-padding;
+			margin-left: $standard-gap;
 			overflow: hidden;
 
 			$flag-size: 14Px;
@@ -103,7 +103,7 @@
 				padding: 3Px;
 				border-radius: 6Px;
 				line-height: 18Px;
-				margin-right: 0.5 * $header-standard-padding;
+				margin-right: 0.5 * $standard-gap;
 
 				img {
 					width: 18Px;
@@ -130,13 +130,13 @@
 
 			.user {
 				display: flex;
-				margin-right: $header-standard-padding;
+				margin-right: $standard-gap;
 
 				img {
 					width: 44Px;
 					height: 44Px;
 					border-radius: 5.5Px;
-					margin-right: 0.5 * $header-standard-padding;
+					margin-right: 0.5 * $standard-gap;
 				}
 
 				.user-name, .network-status {

@@ -8,14 +8,14 @@
 		font-size: 1.4Em;
 		line-height: 2Em;
 		text-transform: uppercase;
-		padding: .25 * $aside-standard-gap $aside-standard-gap;
+		padding: .25 * $standard-gap $standard-gap;
 	}
 
 	nav {
-		margin-bottom: $aside-standard-gap;
+		margin-bottom: $standard-gap;
 
 		%glyph-link {
-			background-position: $aside-standard-gap center;
+			background-position: $standard-gap center;
 			background-repeat: no-repeat;
 		}
 
@@ -63,7 +63,7 @@
 						width: 6Px;
 						height: 6Px;
 						position: absolute;
-						right: $aside-standard-gap;
+						right: $standard-gap;
 						top: 50%;
 						margin-top: -5Px;
 						transform: rotate(45deg);
@@ -82,7 +82,7 @@
 					li a, li a:visited {
 						@include primary-text-color(8);
 						text-transform: none;
-						padding-left: 2 * $aside-standard-gap + 18Px;
+						padding-left: 2 * $standard-gap + 18Px;
 					}
 				}
 
@@ -104,11 +104,11 @@
 		border-width: 1Px 0;
 		border-style: solid;
 		border-color: primary-color(3);
-		padding: $aside-standard-gap;
+		padding: $standard-gap;
 	}
 
 	.site-theme {
-		padding: 0 $aside-standard-gap;
+		padding: $standard-gap $standard-gap 0;
 
 		.theme-name {
 			line-height: 33Px;
