@@ -490,23 +490,6 @@ body {
   background: #4D4E5E;
   border-radius: 6Px;
 }
-.site-content .quests .items .item header, .site-content .games .items .item header {
-  position: relative;
-}
-.site-content .quests .items .item header img, .site-content .games .items .item header img {
-  width: 100%;
-  border-top-left-radius: 6Px;
-  border-top-right-radius: 6Px;
-}
-.site-content .quests .items .item header .action, .site-content .games .items .item header .action {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background: #5246EF;
-  color: #FAFBFF;
-  border: none;
-  border-radius: 6Px;
-}
 .site-content .quests .items .item .description, .site-content .games .items .item .description {
   padding: 10Px 15Px 15Px;
   border-bottom: 1Px solid #6D6E7E;
@@ -547,6 +530,47 @@ body {
   font-weight: bold;
   border: none;
   border-radius: 6Px;
+}
+.site-content .quests .items .item header {
+  position: relative;
+}
+.site-content .quests .items .item header img {
+  width: 100%;
+  border-top-left-radius: 6Px;
+  border-top-right-radius: 6Px;
+}
+.site-content .quests .items .item header .action {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #5246EF;
+  color: #FAFBFF;
+  border: none;
+  border-radius: 6Px;
+}
+.site-content .games .header {
+  margin-bottom: 27.5Px;
+}
+.site-content .games .items .item header {
+  position: relative;
+}
+.site-content .games .items .item header img {
+  position: absolute;
+  left: 10Px;
+  top: -15Px;
+  border-radius: 6Px;
+}
+.site-content .games .items .item header .action {
+  position: absolute;
+  top: 35px;
+  left: 20px;
+  background: #5246EF;
+  color: #FAFBFF;
+  border: none;
+  border-radius: 6Px;
+}
+.site-content .games .items .item .description {
+  padding-left: 90Px;
 }
 
 /*# sourceMappingURL=style.css.map */

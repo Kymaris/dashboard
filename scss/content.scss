@@ -79,26 +79,6 @@
                 background: primary-color(2);
                 border-radius: 6Px;
 
-                header {
-                    position: relative;
-
-                    img {
-                        width: 100%;
-                        border-top-left-radius: 6Px;
-                        border-top-right-radius: 6Px;
-                    }
-
-                    .action {
-                        position: absolute;
-                        top: 15px;
-                        left: 15px;                      
-                        background: secondary-color(4);
-                        color: primary-color(10);
-                        border: none;
-                        border-radius: 6Px;
-                    }
-                }
-
                 .description {
                     padding: 10Px 15Px 15Px;
                     border-bottom: 1Px solid primary-color(3);
@@ -110,7 +90,7 @@
                         color: primary-color(10);
                         margin-bottom: 5Px;
                     }
-
+        
                     span {
                         font-weight: bold;
                         color: primary-color(5);
@@ -147,6 +127,62 @@
                         border-radius: 6Px;
                     }
                 }
+            }
+        }
+    }
+
+    .quests .items .item {
+
+        header {
+            position: relative;
+
+            img {
+                width: 100%;
+                border-top-left-radius: 6Px;
+                border-top-right-radius: 6Px;
+            }
+
+            .action {
+                position: absolute;
+                top: 15px;
+                left: 15px;                      
+                background: secondary-color(4);
+                color: primary-color(10);
+                border: none;
+                border-radius: 6Px;
+            }
+        }
+    }
+
+    .games {
+        .header {
+            margin-bottom: .5 * $standard-gap + 15; 
+        }
+
+        .items .item {
+            header {
+                position: relative;
+
+                img {
+                    position: absolute;
+                    left: 10Px;
+                    top: -15Px;
+                    border-radius: 6Px;
+                }
+
+                .action {
+                    position: absolute;
+                    top: 35px;
+                    left: 20px;                      
+                    background: secondary-color(4);
+                    color: primary-color(10);
+                    border: none;
+                    border-radius: 6Px;
+                }
+            }
+
+            .description {
+                padding-left: 90Px;
             }
         }
     }
