@@ -27,7 +27,7 @@ define(
 					setTimeout(function() {
 						let result = getModcData(skip, take);
 						resolve(result);
-					}, 2786);
+					}, 433);
 				});
 			}
 		}

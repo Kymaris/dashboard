@@ -413,10 +413,13 @@ body {
       transition: color .2s ease-in-out, background-color .2s ease-in-out;
       background-color: #4D4E5E;
       color: #FAFBFF;
-      border-radius: 6Px; }
+      border-radius: 6Px;
+      animation: loaded 1s ease-out; }
       .site-content .quests .items .item.light-theme, .light-theme .site-content .quests .items .item, .site-content .games .items .item.light-theme, .light-theme .site-content .games .items .item {
         color: #2B2C3A;
         background-color: #F6F6FF; }
+      .site-content .quests .items .item.loading, .site-content .games .items .item.loading {
+        filter: blur(7Px); }
       .site-content .quests .items .item .description, .site-content .games .items .item .description {
         padding: 10Px 15Px 15Px;
         border-bottom: 1Px solid #6D6E7E; }
@@ -456,6 +459,13 @@ body {
           font-weight: bold;
           border: none;
           border-radius: 6Px; }
+@keyframes loaded {
+  0% {
+    filter: blur(7Px); }
+  99% {
+    filter: blur(0px); }
+  100% {
+    filter: none; } }
 .site-content .quests .items .item header {
   position: relative; }
   .site-content .quests .items .item header img {

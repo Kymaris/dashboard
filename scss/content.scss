@@ -79,6 +79,11 @@
 				//background: primary-color(2);
 				@include primary-background-text-color(2, 10);
 				border-radius: 6Px;
+				animation: loaded 1s ease-out;
+
+				&.loading {
+					filter: blur(7Px);
+				}
 
 				.description {
 					padding: 10Px 15Px 15Px;
@@ -127,6 +132,12 @@
 						border: none;
 						border-radius: 6Px;
 					}
+				}
+
+				@keyframes loaded {
+					0% { filter: blur(7Px) }
+					99% { filter: blur(0px); }
+					100% { filter: none; }
 				}
 			}
 		}
