@@ -413,13 +413,18 @@ body {
       transition: color .2s ease-in-out, background-color .2s ease-in-out;
       background-color: #4D4E5E;
       color: #FAFBFF;
-      border-radius: 6Px;
-      animation: loaded 1s ease-out; }
+      border-radius: 6Px; }
       .site-content .quests .items .item.light-theme, .light-theme .site-content .quests .items .item, .site-content .games .items .item.light-theme, .light-theme .site-content .games .items .item {
         color: #2B2C3A;
         background-color: #F6F6FF; }
       .site-content .quests .items .item.loading, .site-content .games .items .item.loading {
         filter: blur(7Px); }
+      .site-content .quests .items .item.loaded, .site-content .games .items .item.loaded {
+        animation: loaded 1s ease-out; }
+        .site-content .quests .items .item.loaded header, .site-content .games .items .item.loaded header {
+          overflow: hidden; }
+          .site-content .quests .items .item.loaded header img, .site-content .games .items .item.loaded header img {
+            animation: opacity .6s ease-in; }
       .site-content .quests .items .item .description, .site-content .games .items .item .description {
         padding: 10Px 15Px 15Px;
         border-bottom: 1Px solid #6D6E7E; }
@@ -466,6 +471,14 @@ body {
     filter: blur(0px); }
   100% {
     filter: none; } }
+@keyframes opacity {
+  0% {
+    opacity: 0;
+    transform: scale(1.3); }
+  50% {
+    transform: scale(1); }
+  100% {
+    opacity: 1; } }
 .site-content .quests .items .item header {
   position: relative; }
   .site-content .quests .items .item header img {

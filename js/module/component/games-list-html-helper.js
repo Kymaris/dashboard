@@ -4,7 +4,7 @@ define (
 	function() {
 
 		const html = `
-<article class="item">
+<article class="item loaded">
 	<header>
 		<img src="%%imagePath%%" />
 		<button class="action">Action</button>
