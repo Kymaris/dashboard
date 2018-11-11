@@ -6,6 +6,8 @@
 		align-items: center;
 		padding-left: $standard-gap;
 		box-sizing: border-box;
+		@include primary-text-color(10);
+
 
 		a {
 			display: inline-block;
@@ -146,8 +148,10 @@
 				}
 
 				.user-name {
+					@include primary-text-color(10);
 
 					.membership-status {
+						color: primary-color(10);
 						background: secondary-color(4);
 						border-radius: 4Px;
 						padding: 0 .5em;

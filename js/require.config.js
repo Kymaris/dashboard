@@ -41,7 +41,10 @@
 	require.config({
 		paths: paths([
 			'uiLoader',
-			{ 'widget': ['language-select', 'sitenav-details', 'theme-switcher'] }
+			{ 'widget': ['language-select', 'sitenav-details', 'theme-switcher', 'games-list'] },
+			{ 'component': ['games-list-component', 'games-list-html-helper'] },
+			{ 'model': ['game-short-info'] },
+			{ 'service': ['games-service'] }
 		]),
 		shim: {
 			'resource_about_amd_en': { exports: 'res.aboutAmd' }

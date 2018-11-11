@@ -1,13 +1,19 @@
 define(
 	"uiLoader",
-	["widget.language-select", "widget.sitenav-details", "widget.theme-switcher"],
-	function(languageSelect, sitenavDetails, themeSelector) {
+	[
+		"widget.language-select",
+		"widget.sitenav-details",
+		"widget.theme-switcher",
+		"widget.games-list"
+	],
+	function(languageSelect, sitenavDetails, themeSelector, gamesList) {
 		return new function() {
 
 			function documentReady() {
 				languageSelect.init();
 				sitenavDetails.init();
 				themeSelector.init();
+				gamesList.init();
 			}
 
 			this.init = function() {

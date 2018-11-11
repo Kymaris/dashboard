@@ -113,6 +113,7 @@
 		.theme-name {
 			line-height: 33Px;
 			font-size: 1.2Em;
+			@include primary-text-color(10);
 		}
 
 		label {
