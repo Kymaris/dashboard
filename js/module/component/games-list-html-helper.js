@@ -5,22 +5,26 @@ define (
 
 		const html = `
 <article class="item loaded">
-	<header>
-		<img src="%%imagePath%%" />
-		<button class="action">Action</button>
-	</header>
-	<div class="description">
-		<h1>%%title%%</h1>
-		<span>%%description%%</span>
+	<div class="top">
+		<header>
+			<img src="%%imagePath%%" />
+			<button class="action">Action</button>
+		</header>
+		<div class="description">
+			<h1>%%title%%</h1>
+			<span>%%description%%</span>
+		</div>
 	</div>
 	<footer>
-		<div class="add-coins">
-			<img src="image/logo.svg" alt=""><span>%%coins%%</span>
+		<div class="bottom">
+			<div class="add-coins">
+				<img src="image/logo.svg" alt=""><span>%%coins%%</span>
+			</div>
+			<div class="energy">
+				<img src="image/energy.svg" alt=""><span>%%energy%%</span>
+			</div>
+			<button class="accept">Accept</button>
 		</div>
-		<div class="energy">
-			<img src="image/energy.svg" alt=""><span>%%energy%%</span>
-		</div>
-		<button class="accept">Accept</button>
 	</footer>
 </article>`;
 

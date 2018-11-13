@@ -41,7 +41,7 @@
 	require.config({
 		paths: paths([
 			'uiLoader',
-			{ 'widget': ['language-select', 'sitenav-details', 'theme-switcher', 'games-list'] },
+			{ 'widget': ['language-select', 'sitenav-details', 'theme-switcher', 'games-list', 'games-list-popular', 'pagination', 'pagination-popular'] },
 			{ 'component': ['games-list-component', 'games-list-html-helper'] },
 			{ 'model': ['game-short-info'] },
 			{ 'service': ['games-service'] }

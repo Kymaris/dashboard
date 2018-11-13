@@ -4,12 +4,13 @@ define(
 	function(gamesListComponent) {
 		return new function() {
 			this.init = function() {
-				var gamesList = document.querySelector('section.items')
-				if (!gamesList) 
+				var gamesList = document.querySelector('.games section.items')
+				var pageNumber = document.querySelector('.games .pagination').getAttribute('data-num')
+				if (!gamesList || !pageNumber) 
 					return;
-				gamesListComponent.loadPage().then(function(html) {
+				gamesListComponent.loadPage(pageNumber).then(function(html) {
 					gamesList.innerHTML = html
-				});
+				});	
 			}
 		}
 	}

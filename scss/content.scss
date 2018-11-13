@@ -1,7 +1,10 @@
 .site-content {
 
-	.quests, .games {
-		margin-bottom: $standard-gap;
+	.games {
+
+		&:first-child {
+			margin-bottom: $standard-gap;
+		}
 
 		.header {
 			display: flex;
@@ -45,6 +48,10 @@
 					border-radius: 6Px;
 					display: flex;
 					justify-content: center;
+
+					&:disabled {
+						background: primary-color(2);
+					}
 				}
 
 				@mixin arrow($deg) {
@@ -72,35 +79,38 @@
 
 		.items {
 			display: grid;
-			grid-template-columns: repeat(4, 1fr);
+			grid-template-columns: repeat(auto-fit, minmax(226px, 1fr));
 			grid-gap: 10Px;
 
 			.item {
-				//background: primary-color(2);
+				display: flex;
+				flex-direction: column;
 				@include primary-background-text-color(2, 10);
 				border-radius: 6Px;
 				
-
-				&.loading {
-					filter: blur(7Px);
-				}
-
-				&.loaded {
-					animation: loaded 1s ease-out;
-
-					header {
-						overflow: hidden;
-
-						img {
-							animation: opacity .6s ease-in;
-						}
+				header {
+					position: relative;
+		
+					img {
+						width: 100%;
+						border-top-left-radius: 6Px;
+						border-top-right-radius: 6Px;
+					}
+		
+					.action {
+						position: absolute;
+						top: 15px;
+						left: 15px;                      
+						background: secondary-color(4);
+						color: primary-color(10);
+						border: none;
+						border-radius: 6Px;
 					}
 				}
 
 				.description {
 					padding: 10Px 15Px 15Px;
-					border-bottom: 1Px solid primary-color(3);
-					
+										
 					h1 {
 						font-size: 1.2Em;
 						line-height: 1.2Em;
@@ -116,33 +126,57 @@
 				}
 
 				footer {
-					display: flex;
-					justify-content: space-between;
-					align-items: center;
-					padding: 15Px;
+					flex: 1 1 auto;
+					display:flex;
+					align-items: flex-end;
 
-					.add-coins, .energy {
+					.bottom {
+						flex: 1 1 auto;
 						display: flex;
+						justify-content: space-between;
 						align-items: center;
-					
-						img {
-							width: 18Px;
-							margin-right: 5Px;
+						padding: 15Px;
+						border-top: 1Px solid primary-color(3);
+
+						.add-coins, .energy {
+							display: flex;
+							align-items: center;
+						
+							img {
+								width: 18Px;
+								margin-right: 5Px;
+							}
+
+							span {
+								font-weight: bold;
+								@include primary-text-color(10);
+							}
 						}
 
-						span {
+						.accept {
+							padding: 8Px 12Px;                        
+							background: secondary-color(4);
+							color: primary-color(10);
 							font-weight: bold;
-							@include primary-text-color(10);
+							border: none;
+							border-radius: 6Px;
 						}
 					}
+				}
 
-					.accept {
-						padding: 8Px 12Px;                        
-						background: secondary-color(4);
-						color: primary-color(10);
-						font-weight: bold;
-						border: none;
-						border-radius: 6Px;
+				&.loading {
+					filter: blur(7Px);
+				}
+
+				&.loaded {
+					animation: loaded 1s ease-out;
+
+					header {
+						overflow: hidden;
+
+						img {
+							animation: opacity .6s ease-in;
+						}
 					}
 				}
 
@@ -161,58 +195,34 @@
 		}
 	}
 
-	.quests .items .item {
-
-		header {
-			position: relative;
-
-			img {
-				width: 100%;
-				border-top-left-radius: 6Px;
-				border-top-right-radius: 6Px;
-			}
-
-			.action {
-				position: absolute;
-				top: 15px;
-				left: 15px;                      
-				background: secondary-color(4);
-				color: primary-color(10);
-				border: none;
-				border-radius: 6Px;
-			}
-		}
-	}
-
-	.games {
+	.games.popular {
 		.header {
 			margin-bottom: .5 * $standard-gap + 15; 
 		}
 
-		.items .item {
-			header {
-				position: relative;
+		.items { 
+			row-gap: 25Px;
+			
+			.item {
+				header {
+					img {
+						float: left;
+						width: 70Px;
+						height: 60Px;
+						margin: -15Px 10Px 10Px;
+						object-fit: cover;
+						border-radius: 6Px;
+					}
 
-				img {
-					position: absolute;
-					left: 10Px;
-					top: -15Px;
-					border-radius: 6Px;
+					.action {
+						top: 35px;
+						left: 20px;                      
+					}
 				}
 
-				.action {
-					position: absolute;
-					top: 35px;
-					left: 20px;                      
-					background: secondary-color(4);
-					color: primary-color(10);
-					border: none;
-					border-radius: 6Px;
+				&.loaded header {
+					overflow: unset;
 				}
-			}
-
-			.description {
-				padding-left: 90Px;
 			}
 		}
 	}

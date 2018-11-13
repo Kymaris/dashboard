@@ -4,9 +4,11 @@ define (
 	function(gamesListHTMLHelper, gamesService) {
 		const pageSize = 4;
 		return new function() {
-			this.loadPage = function() {
+			this.loadPage = function(pageNum, popular=false) {
 				return new Promise(function(resolve) {
-					gamesService.getGamesShortInfo(0, pageSize)
+					let take = pageNum * pageSize
+					let skip = take - pageSize
+					gamesService.getGamesShortInfo(skip, take, popular)
 						.then(function(games) {
 							resolve(gamesListHTMLHelper.create(games))
 						})
