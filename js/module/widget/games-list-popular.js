@@ -5,8 +5,8 @@ define(
 		return new function() {
 			this.init = function() {				
 				var popularGameList = document.querySelector('.games.popular section.items')
-				var pageNumberPopular = document.querySelector('.games.popular .pagination').getAttribute('data-num')
-				if (!popularGameList) 
+				var pageNumberPopular = parseInt(document.querySelector('.games.popular .pagination').getAttribute('page-num'))
+				if (!popularGameList || !pageNumberPopular) 
 					return;
 				gamesListComponent.loadPage(pageNumberPopular, popular=true).then(function(html) {
 					popularGameList.innerHTML = html

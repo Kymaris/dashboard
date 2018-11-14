@@ -4,8 +4,8 @@ define(
 	function(gamesListComponent) {
 		return new function() {
 			this.init = function() {
-				var gamesList = document.querySelector('.games section.items')
-				var pageNumber = document.querySelector('.games .pagination').getAttribute('data-num')
+				var gamesList = document.querySelector('.games .items')
+				var pageNumber = parseInt(document.querySelector('.games .pagination').getAttribute('page-num'))
 				if (!gamesList || !pageNumber) 
 					return;
 				gamesListComponent.loadPage(pageNumber).then(function(html) {

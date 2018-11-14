@@ -2,7 +2,7 @@ define(
 	'service.games-service',
 	['model.game-short-info'],
 	function(GameShortInfo) {
-		const defaultPageSize = 4;
+		const pageSize = 4;
 		const dataSource = [
 			new GameShortInfo('PUGB Mobile', 'Deal 5000 damage to enemies with grenades.',  './image/games/PUGBMobile.jpg', 100, -300),
 			new GameShortInfo('Mayhem Combat', 'Win 10 games per character Mike.', './image/games/MayhemCombat.jpg', 75, -200),
@@ -24,26 +24,29 @@ define(
 			let getModcData = function(skip, take, popular) {
 				return dataSource.filter(q => q.popular >= popular).slice(skip, take);
 			}
-
-			var gamesList = document.querySelector('.games .pagination')
-			if (!gamesList.getAttribute('count-page'))
-			{
-				var countPage = Math.ceil(dataSource.length / defaultPageSize)
-				document.querySelector('.games .pagination').setAttribute('count-page', countPage)
+			let setPageSize = function(pageSize) {
+				var gamesList = document.querySelector('.games .pagination')
+				if (!gamesList.getAttribute('count-page'))
+				{
+					var countPage = Math.ceil(dataSource.length / pageSize)
+					gamesList.setAttribute('count-page', countPage)
+				}
+				var gamesListPopular = document.querySelector('.games.popular .pagination')
+				if (!gamesListPopular.getAttribute('count-page'))
+				{
+					var countPage = Math.ceil(dataSource.filter(q => q.popular).length / pageSize)
+					gamesListPopular.setAttribute('count-page', countPage)
+				}
 			}
-			var gamesListPopular = document.querySelector('.games.popular .pagination')
-			if (!gamesListPopular.getAttribute('count-page'))
-			{
-				var countPage = Math.ceil(dataSource.filter(q => q.popular).length / defaultPageSize)
-				gamesListPopular.setAttribute('count-page', countPage)
-			}
 
-			this.getGamesShortInfo = function(skipArg, takeArg, popularArg) {
-				let skip = typeof skipArg === 'number' ? skipArg : 0;
-				let take = typeof takeArg === 'number' ? takeArg : defaultPageSize;
-				return new Promise(function(resolve, reject) {
+			this.getGamesShortInfo = function(pageNumberArg, popular) {			
+				setPageSize(pageSize)
+				var pageNumber = typeof pageNumberArg === 'number' ? pageNumberArg : 1
+				let take = pageNumber * pageSize
+				let skip = take - pageSize 
+				return new Promise(function(resolve) {
 					setTimeout(function() {
-						let result = getModcData(skip, take, popularArg);
+						let result = getModcData(skip, take, popular);
 						resolve(result);
 					}, 233);
 				});

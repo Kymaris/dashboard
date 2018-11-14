@@ -2,7 +2,7 @@ define (
 	'component.games-list-html-helper',
 	[],
 	function() {
-
+		//#region html		
 		const html = `
 <article class="item loaded">
 	<div class="top">
@@ -27,8 +27,7 @@ define (
 		</div>
 	</footer>
 </article>`;
-
-
+		//#endregion
 		return new function() {
 			var replacePlaceholder = function(html, placeholder, value) {
 				var replacement = '%%' + placeholder + '%%'
@@ -45,7 +44,6 @@ define (
 					gamesHtml = replacePlaceholder(gamesHtml, 'energy', game.energyCost)
 					result += gamesHtml
 				});
-				
 				return result;
 			}
 		}

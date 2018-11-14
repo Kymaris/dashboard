@@ -14,11 +14,11 @@ define(
 				next.addEventListener('click', function(e) {
 					e.preventDefault();
 					var countPage = parseInt (pagination.getAttribute('count-page'))
-					var pageNumber = parseInt(pagination.getAttribute('data-num'))
+					var pageNumber = parseInt(pagination.getAttribute('page-num'))
 					pageNumber++
 					if (pageNumber <= countPage)
 					{
-						pagination.setAttribute('data-num', pageNumber)
+						pagination.setAttribute('page-num', pageNumber)
 						widgetGamesList.init();
 					}
 					if (countPage === pageNumber)
@@ -27,12 +27,11 @@ define(
 				})
 				prev.addEventListener('click', function(e) {
 					e.preventDefault();
-					var countPage = parseInt (pagination.getAttribute('count-page'))
-					var pageNumber = parseInt(pagination.getAttribute('data-num'))
+					var pageNumber = parseInt(pagination.getAttribute('page-num'))
 					pageNumber--
 					if (pageNumber >= 1)
 					{
-						pagination.setAttribute('data-num', pageNumber)
+						pagination.setAttribute('page-num', pageNumber)
 						widgetGamesList.init();
 					}
 					if (pageNumber === 1)
