@@ -6,10 +6,8 @@ define(
 		"widget.theme-switcher",
 		"widget.games-list",
 		"widget.games-list-popular",
-		"widget.pagination",
-		"widget.pagination-popular"
 	],
-	function(languageSelect, sitenavDetails, themeSelector, gamesList, gameListPopular, pagination, paginationPopular) {
+	function(languageSelect, sitenavDetails, themeSelector, gamesList, gameListPopular) {
 		return new function() {
 
 			function documentReady() {
@@ -18,8 +16,6 @@ define(
 				themeSelector.init();
 				gamesList.init();
 				gameListPopular.init();
-				pagination.init();
-				paginationPopular.init();
 			}
 
 			this.init = function() {

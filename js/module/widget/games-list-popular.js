@@ -3,7 +3,7 @@ define(
 	['component.games-list-component'],
 	function(gamesListComponent) {
 		return new function() {
-			this.init = function() {				
+			this.init = function() {
 				var popularGameList = document.querySelector('.games.popular section.items')
 				var pageNumberPopular = parseInt(document.querySelector('.games.popular .pagination').getAttribute('page-num'))
 				if (!popularGameList || !pageNumberPopular) 

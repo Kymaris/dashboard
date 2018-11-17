@@ -6,8 +6,10 @@ define (
 			this.loadPage = function(pageNumber, popular=false) {
 				return new Promise(function(resolve) {
 					gamesService.getGamesShortInfo(pageNumber, popular)
-						.then(function(games) {
-							resolve(gamesListHTMLHelper.create(games))
+						.then(function(searchResult) {
+							var html = gamesListHTMLHelper.create(searchResult.items)
+							var htmlSearchResult = {html, pageNumber: searchResult.pageCount}
+							resolve(htmlSearchResult)
 						})
 				})
 			}
